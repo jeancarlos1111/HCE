@@ -1,0 +1,518 @@
+object frmUsuarios: TfrmUsuarios
+  Left = 250
+  Height = 640
+  Top = 100
+  Width = 1020
+  Caption = 'Administracion de Usuarios y Roles - HCE'
+  ClientHeight = 640
+  ClientWidth = 1020
+  Color = 16119288
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '4.0.0.4'
+  object pnlCabecera: TPanel
+    Left = 0
+    Height = 74
+    Top = 0
+    Width = 1020
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 74
+    ClientWidth = 1020
+    Color = 7028244
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 0
+    object lblLogoIcono: TLabel
+      Left = 18
+      Height = 34
+      Top = 18
+      Width = 28
+      Caption = '✚'
+      Font.Color = 5301186
+      Font.Height = -26
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object lblTitulo: TLabel
+      Left = 56
+      Height = 22
+      Top = 15
+      Width = 250
+      Caption = 'Gestion de Usuarios y Roles'
+      Font.Color = clWhite
+      Font.Height = -17
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object lblSubtitulo: TLabel
+      Left = 56
+      Height = 16
+      Top = 41
+      Width = 370
+      Caption = 'Administracion de Cuentas, Credenciales y Matriculas Sanitarias'
+      Font.Color = 13813936
+      Font.Height = -12
+      ParentColor = False
+      ParentFont = False
+    end
+    object btnCerrarTop: TButton
+      Left = 910
+      Height = 32
+      Top = 20
+      Width = 92
+      Anchors = [akTop, akRight]
+      Caption = 'Cerrar'
+      TabOrder = 0
+      OnClick = btnCerrarClick
+    end
+  end
+  object pnlFondo: TPanel
+    Left = 0
+    Height = 566
+    Top = 74
+    Width = 1020
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 566
+    ClientWidth = 1020
+    Color = 16119288
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 1
+    object pnlLateral: TPanel
+      Left = 0
+      Height = 566
+      Top = 0
+      Width = 340
+      Align = alLeft
+      BevelOuter = bvNone
+      ClientHeight = 566
+      ClientWidth = 340
+      Color = 16119288
+      ParentBackground = False
+      ParentColor = False
+      TabOrder = 0
+      object lblTituloLista: TLabel
+        Left = 16
+        Height = 14
+        Top = 14
+        Width = 155
+        Caption = 'USUARIOS REGISTRADOS'
+        Font.Color = 7028244
+        Font.Height = -11
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object edtBuscar: TEdit
+        Left = 16
+        Height = 28
+        Top = 32
+        Width = 308
+        Font.Height = -12
+        ParentFont = False
+        TabOrder = 0
+        TextHint = 'Buscar por login, cedula o nombre...'
+        OnChange = edtBuscarChange
+      end
+      object gridUsuarios: TStringGrid
+        Left = 16
+        Height = 484
+        Top = 68
+        Width = 308
+        Anchors = [akTop, akLeft, akBottom]
+        ColCount = 5
+        FixedCols = 0
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowSelect, goSmoothScroll]
+        RowCount = 1
+        TabOrder = 1
+        OnSelectCell = gridUsuariosSelectCell
+        ColWidths = (
+          0
+          75
+          75
+          95
+          60
+        )
+        Cells = (
+          5
+          0
+          0
+          'ID'
+          1
+          0
+          'Login'
+          2
+          0
+          'Cedula'
+          3
+          0
+          'Nombre'
+          4
+          0
+          'Estado'
+        )
+      end
+    end
+    object pnlEdicion: TPanel
+      Left = 340
+      Height = 566
+      Top = 0
+      Width = 680
+      Align = alClient
+      BevelOuter = bvNone
+      ClientHeight = 566
+      ClientWidth = 680
+      Color = 16119288
+      ParentBackground = False
+      ParentColor = False
+      TabOrder = 1
+      object pnlCardDatos: TPanel
+        Left = 8
+        Height = 176
+        Top = 12
+        Width = 656
+        Anchors = [akTop, akLeft, akRight]
+        BevelOuter = bvNone
+        ClientHeight = 176
+        ClientWidth = 656
+        Color = clWhite
+        ParentBackground = False
+        ParentColor = False
+        TabOrder = 0
+        object lblEtiquetaDatos: TLabel
+          Left = 16
+          Height = 14
+          Top = 10
+          Width = 195
+          Caption = 'DATOS DE CUENTA E IDENTIDAD'
+          Font.Color = 7028244
+          Font.Height = -11
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object lblLogin: TLabel
+          Left = 16
+          Height = 16
+          Top = 32
+          Width = 51
+          Caption = 'Usuario:'
+          ParentColor = False
+        end
+        object edtLogin: TEdit
+          Left = 16
+          Height = 26
+          Top = 48
+          Width = 160
+          TabOrder = 0
+        end
+        object lblCedula: TLabel
+          Left = 192
+          Height = 16
+          Top = 32
+          Width = 98
+          Caption = 'Cedula (V-/E-):'
+          ParentColor = False
+        end
+        object edtCedula: TEdit
+          Left = 192
+          Height = 26
+          Top = 48
+          Width = 160
+          TabOrder = 1
+        end
+        object chkActivo: TCheckBox
+          Left = 380
+          Height = 22
+          Top = 50
+          Width = 110
+          Caption = 'Cuenta Activa'
+          Checked = True
+          State = cbChecked
+          TabOrder = 2
+        end
+        object lblNombres: TLabel
+          Left = 16
+          Height = 16
+          Top = 78
+          Width = 62
+          Caption = 'Nombres:'
+          ParentColor = False
+        end
+        object edtNombres: TEdit
+          Left = 16
+          Height = 26
+          Top = 94
+          Width = 280
+          TabOrder = 3
+        end
+        object lblApellidos: TLabel
+          Left = 312
+          Height = 16
+          Top = 78
+          Width = 63
+          Caption = 'Apellidos:'
+          ParentColor = False
+        end
+        object edtApellidos: TEdit
+          Left = 312
+          Height = 26
+          Top = 94
+          Width = 320
+          Anchors = [akTop, akLeft, akRight]
+          TabOrder = 4
+        end
+        object lblEmail: TLabel
+          Left = 16
+          Height = 16
+          Top = 124
+          Width = 125
+          Caption = 'Correo Electronico:'
+          ParentColor = False
+        end
+        object edtEmail: TEdit
+          Left = 16
+          Height = 26
+          Top = 140
+          Width = 280
+          TabOrder = 5
+        end
+        object lblTelefono: TLabel
+          Left = 312
+          Height = 16
+          Top = 124
+          Width = 57
+          Caption = 'Telefono:'
+          ParentColor = False
+        end
+        object edtTelefono: TEdit
+          Left = 312
+          Height = 26
+          Top = 140
+          Width = 320
+          Anchors = [akTop, akLeft, akRight]
+          TabOrder = 6
+        end
+      end
+      object pnlCardRoles: TPanel
+        Left = 8
+        Height = 144
+        Top = 196
+        Width = 656
+        Anchors = [akTop, akLeft, akRight]
+        BevelOuter = bvNone
+        ClientHeight = 144
+        ClientWidth = 656
+        Color = clWhite
+        ParentBackground = False
+        ParentColor = False
+        TabOrder = 1
+        object lblEtiquetaRoles: TLabel
+          Left = 16
+          Height = 14
+          Top = 10
+          Width = 265
+          Caption = 'ROLES Y SEPARACION DE FUNCIONES (SoD)'
+          Font.Color = 7028244
+          Font.Height = -11
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object lblNotaRoles: TLabel
+          Left = 16
+          Height = 14
+          Top = 26
+          Width = 478
+          Caption = 'Regla: El rol AUDITOR no puede combinarse con ADMINISTRADOR ni roles clinicos.'
+          Font.Color = clGray
+          Font.Height = -10
+          ParentColor = False
+          ParentFont = False
+        end
+        object clbRoles: TCheckListBox
+          Left = 16
+          Height = 90
+          Top = 44
+          Width = 624
+          Anchors = [akTop, akLeft, akRight]
+          ItemHeight = 0
+          TabOrder = 0
+          OnClickCheck = clbRolesItemClick
+        end
+      end
+      object pnlCardProf: TPanel
+        Left = 8
+        Height = 140
+        Top = 348
+        Width = 656
+        Anchors = [akTop, akLeft, akRight]
+        BevelOuter = bvNone
+        ClientHeight = 140
+        ClientWidth = 656
+        Color = clWhite
+        ParentBackground = False
+        ParentColor = False
+        TabOrder = 2
+        object lblEtiquetaProf: TLabel
+          Left = 16
+          Height = 14
+          Top = 10
+          Width = 405
+          Caption = 'DATOS PROFESIONALES (LEY DEL EJERCICIO MEDICO / ENFERMERIA)'
+          Font.Color = 7028244
+          Font.Height = -11
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object lblTipoProf: TLabel
+          Left = 16
+          Height = 16
+          Top = 30
+          Width = 31
+          Caption = 'Tipo:'
+          ParentColor = False
+        end
+        object cbTipoProf: TComboBox
+          Left = 16
+          Height = 26
+          Top = 46
+          Width = 140
+          ItemHeight = 0
+          Style = csDropDownList
+          TabOrder = 0
+        end
+        object lblMpps: TLabel
+          Left = 168
+          Height = 16
+          Top = 30
+          Width = 142
+          Caption = 'Matricula M.P.P.S. (*):'
+          ParentColor = False
+        end
+        object edtMpps: TEdit
+          Left = 168
+          Height = 26
+          Top = 46
+          Width = 160
+          TabOrder = 1
+        end
+        object lblColegio: TLabel
+          Left = 340
+          Height = 16
+          Top = 30
+          Width = 52
+          Caption = 'Colegio:'
+          ParentColor = False
+        end
+        object edtColegio: TEdit
+          Left = 340
+          Height = 26
+          Top = 46
+          Width = 292
+          Anchors = [akTop, akLeft, akRight]
+          TabOrder = 2
+        end
+        object lblNroColegio: TLabel
+          Left = 16
+          Height = 16
+          Top = 76
+          Width = 75
+          Caption = 'Nro Colegio:'
+          ParentColor = False
+        end
+        object edtNroColegio: TEdit
+          Left = 16
+          Height = 26
+          Top = 92
+          Width = 140
+          TabOrder = 3
+        end
+        object lblEspecialidades: TLabel
+          Left = 168
+          Height = 16
+          Top = 76
+          Width = 92
+          Caption = 'Especialidades:'
+          ParentColor = False
+        end
+        object edtEspecialidades: TEdit
+          Left = 168
+          Height = 26
+          Top = 92
+          Width = 464
+          Anchors = [akTop, akLeft, akRight]
+          TabOrder = 4
+        end
+      end
+      object pnlCardBotones: TPanel
+        Left = 8
+        Height = 52
+        Top = 498
+        Width = 656
+        Anchors = [akTop, akLeft, akRight]
+        BevelOuter = bvNone
+        ClientHeight = 52
+        ClientWidth = 656
+        Color = clWhite
+        ParentBackground = False
+        ParentColor = False
+        TabOrder = 3
+        object btnNuevo: TButton
+          Left = 16
+          Height = 34
+          Top = 9
+          Width = 90
+          Caption = 'Nuevo'
+          TabOrder = 0
+          OnClick = btnNuevoClick
+        end
+        object btnGuardar: TButton
+          Left = 114
+          Height = 34
+          Top = 9
+          Width = 130
+          Caption = 'Guardar Usuario'
+          Default = True
+          TabOrder = 1
+          OnClick = btnGuardarClick
+        end
+        object btnResetClave: TButton
+          Left = 252
+          Height = 34
+          Top = 9
+          Width = 120
+          Caption = 'Reset Clave'
+          TabOrder = 2
+          OnClick = btnResetClaveClick
+        end
+        object btnInactivar: TButton
+          Left = 380
+          Height = 34
+          Top = 9
+          Width = 100
+          Caption = 'Inactivar'
+          TabOrder = 3
+          OnClick = btnInactivarClick
+        end
+        object btnCerrar: TButton
+          Left = 556
+          Height = 34
+          Top = 9
+          Width = 84
+          Anchors = [akTop, akRight]
+          Cancel = True
+          Caption = 'Cerrar'
+          TabOrder = 4
+          OnClick = btnCerrarClick
+        end
+      end
+    end
+  end
+end

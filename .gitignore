@@ -1,0 +1,57 @@
+# =======================================================================
+# Lazarus & Free Pascal (FPC)
+# =======================================================================
+# Binarios y ejecutables generados
+project1
+project1.exe
+bin/
+*.exe
+*.bin
+*.elf
+*.so
+*.dylib
+*.dll
+
+# Unidades compiladas y objetos
+lib/
+*.ppu
+*.o
+*.a
+*.s
+*.or
+*.compiled
+
+# Sesiones de usuario e IDE de Lazarus (mantener .lpi y .lpr en git, ignorar .lps)
+*.lps
+backup/
+*.bak
+*.~*
+*.rst
+
+# =======================================================================
+# Bases de Datos Locales y Temporales (SQLite)
+# =======================================================================
+*.db
+*.db-wal
+*.db-shm
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# =======================================================================
+# Archivos Temporales de Desarrollo y Pruebas
+# =======================================================================
+scratch_*
+debug_*
+*.tmp
+*.log
+
+# =======================================================================
+# Sistema Operativo y Editores
+# =======================================================================
+.DS_Store
+Thumbs.db
+.directory
+.vscode/
+.idea/
+

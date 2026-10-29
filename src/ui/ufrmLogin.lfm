@@ -1,0 +1,183 @@
+object frmLogin: TfrmLogin
+  Left = 500
+  Height = 350
+  Top = 260
+  Width = 420
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'Iniciar Sesion - HCE'
+  ClientHeight = 350
+  ClientWidth = 420
+  Color = clWhite
+  Position = poScreenCenter
+  OnCreate = FormCreate
+  OnShow = FormShow
+  LCLVersion = '4.0.0.4'
+  object pnlCabecera: TPanel
+    Left = 0
+    Height = 74
+    Top = 0
+    Width = 420
+    Align = alTop
+    BevelOuter = bvNone
+    Color = 7028244
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 0
+    object lblLogoIcono: TLabel
+      Left = 18
+      Height = 34
+      Top = 18
+      Width = 28
+      Caption = '✚'
+      Font.Color = 5301186
+      Font.Height = -26
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object lblTitulo: TLabel
+      Left = 56
+      Height = 22
+      Top = 15
+      Width = 236
+      Caption = 'Historia Clinica Electronica'
+      Font.Color = clWhite
+      Font.Height = -17
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object lblSubtitulo: TLabel
+      Left = 56
+      Height = 16
+      Top = 41
+      Width = 286
+      Caption = 'Sistema Seguro de Historias y Estadisticas'
+      Font.Color = 13813936
+      Font.Height = -12
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object pnlCuerpo: TPanel
+    Left = 0
+    Height = 276
+    Top = 74
+    Width = 420
+    Align = alClient
+    BevelOuter = bvNone
+    Color = clWhite
+    ParentBackground = False
+    ParentColor = False
+    TabOrder = 1
+    object lblUsuario: TLabel
+      Left = 32
+      Height = 16
+      Top = 14
+      Width = 117
+      Caption = 'Usuario o Cedula:'
+      Font.Color = 4207914
+      Font.Height = -12
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object edtUsuario: TEdit
+      Left = 32
+      Height = 28
+      Top = 34
+      Width = 356
+      Font.Height = -13
+      ParentFont = False
+      TabOrder = 0
+      OnChange = edtCambioTexto
+      OnKeyPress = edtUsuarioKeyPress
+    end
+    object lblClave: TLabel
+      Left = 32
+      Height = 16
+      Top = 72
+      Width = 79
+      Caption = 'Contrasena:'
+      Font.Color = 4207914
+      Font.Height = -12
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object edtClave: TEdit
+      Left = 32
+      Height = 28
+      Top = 92
+      Width = 356
+      EchoMode = emPassword
+      Font.Height = -13
+      ParentFont = False
+      PasswordChar = '*'
+      TabOrder = 1
+      OnChange = edtCambioTexto
+      OnKeyPress = edtClaveKeyPress
+    end
+    object pnlError: TPanel
+      Left = 32
+      Height = 36
+      Top = 130
+      Width = 356
+      BevelOuter = bvNone
+      ClientHeight = 36
+      ClientWidth = 356
+      Color = 15264253
+      ParentBackground = False
+      ParentColor = False
+      TabOrder = 4
+      Visible = False
+      object lblError: TLabel
+        Left = 8
+        Height = 28
+        Top = 4
+        Width = 340
+        AutoSize = False
+        Caption = 'Mensaje de error'
+        Font.Color = 1842331
+        Font.Height = -11
+        ParentColor = False
+        ParentFont = False
+        WordWrap = True
+      end
+    end
+    object btnIngresar: TButton
+      Left = 216
+      Height = 32
+      Top = 180
+      Width = 110
+      Caption = 'Iniciar Sesion'
+      Default = True
+      TabOrder = 2
+      OnClick = btnIngresarClick
+    end
+    object btnCancelar: TButton
+      Left = 332
+      Height = 32
+      Top = 180
+      Width = 56
+      Cancel = True
+      Caption = 'Salir'
+      TabOrder = 3
+      OnClick = btnCancelarClick
+    end
+    object lblPie: TLabel
+      Left = 32
+      Height = 16
+      Top = 230
+      Width = 356
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'Conexion local protegida - Trazabilidad y auditoria activa'
+      Font.Color = clGray
+      Font.Height = -10
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+end
